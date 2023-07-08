@@ -1,2 +1,4 @@
 # Fake-News-Detector
-A Fake News Prediction System using Machine Learning with Python.
+## A Fake News Prediction System using Machine Learning with Python.
+- Algorithm: Logistic Regression model for prediction
+
