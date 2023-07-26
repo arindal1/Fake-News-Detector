@@ -15,7 +15,9 @@ Go to your Kaggle account, click on "My Account," scroll down to the "API" secti
 
 >> In Jupyter Notebook, you'll need to install the Kaggle library. You can do this by running the following command in a code cell:
 
-```!pip install kaggle```
+```
+!pip install kaggle
+```
 
 - Upload Kaggle API Token:
 
@@ -25,12 +27,17 @@ Go to your Kaggle account, click on "My Account," scroll down to the "API" secti
 
 >> In your Jupyter Notebook, you can now use the Kaggle library to directly download datasets from Kaggle. Use the kaggle datasets download command along with the dataset's URL or dataset ID to download it. For example:
 
-```!kaggle datasets download -d username/dataset-name```
+```
+!kaggle datasets download -d username/dataset-name
+```
 
 - Unzip the Dataset:
 
 >> The downloaded dataset will be in a compressed format (e.g., zip). You can use the unzip command to extract its contents. For example:
-```!unzip dataset-name.zip```
+
+```
+!unzip dataset-name.zip
+```
 
 - Read the Dataset into a DataFrame:
 
