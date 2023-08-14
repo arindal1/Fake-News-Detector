@@ -1,12 +1,14 @@
 # Fake News Detector using Logistic Regression
 
-![Fake News Detector](https://example.com/path/to/your/image.png)
+![Fake News Detector](resources/scs1.png)
 
 Welcome to the **Fake News Detector using Logistic Regression** repository! This repository contains the code implementation of a fake news detector using a logistic regression model. The project aims to identify and classify news articles as either real or fake based on their content.
 
 ## Overview
 
 Fake news has become a concerning issue in today's information-driven world. The **Fake News Detector** project addresses this problem by leveraging machine learning techniques to classify news articles as genuine or fabricated. This repository provides a detailed implementation of the solution, from data preprocessing to model training and testing.
+
+![Fake News Detector](resources/scs2.png)
 
 ## Features
 
@@ -36,6 +38,8 @@ Fake news has become a concerning issue in today's information-driven world. The
 
 The dataset used in this project is downloaded from Kaggle's ["Fake News"](https://www.kaggle.com/competitions/fake-news) competition. It consists of news articles labeled as either real or fake.
 
+![Fake News Detector](resources/scs3.png)
+
 ## Dependencies
 
 The project requires the following libraries and dependencies:
@@ -55,6 +59,8 @@ The provided code implements a fake news detector using a logistic regression mo
 ### Step 1: Importing Libraries and Datasets
 
 The initial code block imports necessary libraries and downloads the dataset directly from Kaggle. It installs the Kaggle API library (`!pip install kaggle`), downloads the dataset (`!kaggle competitions download -c fake-news`), and unzips it (`!unzip fake-news.zip`).
+
+![Fake News Detector](resources/scs4.png)
 
 ### Step 2: Data Preprocessing
 
