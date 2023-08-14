@@ -117,6 +117,6 @@ If you have any questions or want to connect, feel free to reach out:
 - LinkedIn: [Arindal](https://www.linkedin.com/in/arindalchar/)
 - kaggle: [arindal](https://www.kaggle.com/arindal)
 - Dataset Link: <a href="https://www.kaggle.com/competitions/fake-news/data" target="_blank"> Kaggle </a>
-- Google Collab Link: <a href="1YxD2SRlRn9YfG5Lak7Pr9b8Y7bg6maOZ" target="_blank"> Collab </a>
+- Google Collab Link: <a href="https://colab.research.google.com/drive/1YxD2SRlRn9YfG5Lak7Pr9b8Y7bg6maOZ?authuser=0#scrollTo=HZtk5pq2T8Ey" target="_blank"> Collab </a>
 
 ### Happy detecting and learning! 🕵️‍♂️
