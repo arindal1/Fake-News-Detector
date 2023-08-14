@@ -1,58 +1,122 @@
-# Fake-News-Detector
-### A Fake News Prediction System using Machine Learning with Python.
-- Algorithm: Logistic Regression model for prediction
+# Fake News Detector using Logistic Regression
 
-## Importing Kaggle Dataset into Jupyter
+![Fake News Detector](https://example.com/path/to/your/image.png)
 
-To import a dataset from Kaggle into Jupyter Notebook, you'll need to follow these steps:
+Welcome to the **Fake News Detector using Logistic Regression** repository! This repository contains the code implementation of a fake news detector using a logistic regression model. The project aims to identify and classify news articles as either real or fake based on their content.
 
-- Create a Kaggle Account and API Token:
+## Overview
 
->> If you don't have a Kaggle account, create one on the Kaggle website.
-Go to your Kaggle account, click on "My Account," scroll down to the "API" section, and click "Create New API Token." This will download a file named kaggle.json, which contains your API credentials.
+Fake news has become a concerning issue in today's information-driven world. The **Fake News Detector** project addresses this problem by leveraging machine learning techniques to classify news articles as genuine or fabricated. This repository provides a detailed implementation of the solution, from data preprocessing to model training and testing.
 
-- Install Kaggle Library:
+## Features
 
->> In Jupyter Notebook, you'll need to install the Kaggle library. You can do this by running the following command in a code cell:
+- Logistic Regression Model: The core of the project uses a logistic regression model to classify news articles.
+- Text Preprocessing: The project demonstrates text preprocessing techniques such as stemming and TF-IDF vectorization.
+- Dataset: The dataset used for training and testing the model is downloaded from Kaggle's "Fake News" competition.
+- Jupyter Notebook: The project code is provided as a Jupyter Notebook for easy understanding and execution.
 
-```
-!pip install kaggle
-```
+## Installation and Usage
 
-- Upload Kaggle API Token:
+1. Clone the repository to your local machine:
 
->> Upload the kaggle.json file you downloaded earlier into the same directory where your Jupyter Notebook is located. This will allow the Kaggle library to access your Kaggle account.
+   ```bash
+   git clone https://github.com/yourusername/Fake-News-Detector.git
+   cd Fake-News-Detector
+   ```
 
-- Import the Dataset:
+2. Open the Jupyter Notebook in your preferred environment:
 
->> In your Jupyter Notebook, you can now use the Kaggle library to directly download datasets from Kaggle. Use the kaggle datasets download command along with the dataset's URL or dataset ID to download it. For example:
+   ```bash
+   jupyter notebook Fake_News_Detector.ipynb
+   ```
 
-```
-!kaggle datasets download -d username/dataset-name
-```
+3. Follow the step-by-step instructions in the Jupyter Notebook to explore, execute, and understand the project code.
 
-- Unzip the Dataset:
+## Dataset
 
->> The downloaded dataset will be in a compressed format (e.g., zip). You can use the unzip command to extract its contents. For example:
+The dataset used in this project is downloaded from Kaggle's ["Fake News"](https://www.kaggle.com/competitions/fake-news) competition. It consists of news articles labeled as either real or fake.
 
-```
-!unzip dataset-name.zip
-```
+## Dependencies
 
-- Read the Dataset into a DataFrame:
+The project requires the following libraries and dependencies:
 
->> After extracting the dataset, you can use Pandas to read the data into a DataFrame and start exploring and analyzing it. For example:
-```
-import pandas as pd
+- NumPy
+- Pandas
+- scikit-learn
+- nltk
+- Jupyter Notebook
 
-df = pd.read_csv('dataset-name.csv')  # Adjust the filename and format as per your dataset
-```
+Ensure that you have these dependencies installed in your environment before running the notebook.
 
-- Data Analysis and Usage:
+## How does it work?
 
->> Now that you have the dataset loaded into a DataFrame, you can perform various data analysis tasks, data cleaning, visualization, machine learning, etc., depending on your project's requirements.
-**Nte:** Remember that you need to replace username/dataset-name with the appropriate Kaggle username and dataset name you want to download. Also, ensure that you have the necessary permissions to access the dataset on Kaggle. If the dataset is private, you might need to use additional commands to authenticate your API token.
+The provided code implements a fake news detector using a logistic regression model. It involves several steps, such as importing datasets, pre-processing data, stemming, vectorization, splitting data, training the model, and making predictions. I'll explain each section of the code in detail:
 
-Dataset Link: <a href="https://www.kaggle.com/competitions/fake-news/data" target="_blank"> Kaggle </a>
-Google Collab Link: <a href="1YxD2SRlRn9YfG5Lak7Pr9b8Y7bg6maOZ" target="_blank"> Collab </a>
+### Step 1: Importing Libraries and Datasets
 
+The initial code block imports necessary libraries and downloads the dataset directly from Kaggle. It installs the Kaggle API library (`!pip install kaggle`), downloads the dataset (`!kaggle competitions download -c fake-news`), and unzips it (`!unzip fake-news.zip`).
+
+### Step 2: Data Preprocessing
+
+#### Stopwords
+
+Stopwords are common words that don't provide significant meaning in natural language text. The code attempts to download the stopwords list from the NLTK library. However, it seems to encounter a connection issue (`[nltk_data] Error loading stopwords: <urlopen error [WinError 10061] No connection could be made because the target machine actively refused it>`), which might require an internet connection to resolve.
+
+### Step 3: Pre-Processing the Data
+
+1. The dataset is imported into a Pandas DataFrame named `news_dataset`.
+2. Missing values in the dataset are handled by filling them with empty strings.
+3. The 'content' column is created by merging the 'author' name and 'title' of each news article.
+4. The data and labels are separated into `X` and `Y` respectively.
+
+### Step 4: Stemming Process
+
+The code uses stemming to reduce words to their root form. A stemming function is defined, which:
+1. Removes non-alphabet characters and converts to lowercase.
+2. Tokenizes the text into words.
+3. Applies stemming to each word and removes stopwords.
+4. Joins the stemmed words back into a sentence.
+
+The `apply` method is used to apply this stemming function to the 'content' column of the DataFrame.
+
+### Step 5: Converting to Numerical Data (TF-IDF Vectorization)
+
+The text data is transformed into numerical format using Term Frequency-Inverse Document Frequency (TF-IDF) vectorization. The `TfidfVectorizer` from Scikit-Learn is used to tokenize, build a vocabulary, and calculate the TF-IDF scores for each word in the 'content' column. The transformed data is stored in the variable `X`.
+
+### Step 6: Splitting Training and Testing Data
+
+The data is split into training and testing sets using the `train_test_split` function from Scikit-Learn. The testing set constitutes 20% of the data, and stratification is applied based on the 'label' column to ensure similar class distribution in both sets.
+
+### Step 7: Training the Model
+
+A logistic regression model is initialized using `LogisticRegression()` and trained using the training data (`X_train`, `Y_train`) using the `fit` method.
+
+### Step 8: Model Accuracy
+
+1. The accuracy of the model on the training data is calculated by predicting the labels using the training data and comparing with the actual labels. The accuracy score is printed.
+2. Similarly, the accuracy of the model on the testing data is calculated and printed.
+
+### Step 9: Prediction
+
+1. An example instance (`X_new`) from the testing data is selected.
+2. The trained model is used to predict whether the news is fake or real.
+3. The prediction result is printed based on the predicted label (0 for real, 1 for fake).
+4. The actual label is retrieved from the testing data (`Y_test[3]`) and compared to the prediction result to confirm correctness.
+
+Overall, this code demonstrates the process of building a fake news detector using a logistic regression model, including data preprocessing, stemming, TF-IDF vectorization, model training, and predictions.
+
+## Contributing
+
+Contributions to this repository are welcome! If you find any issues, have suggestions, or want to improve the code, feel free to submit a pull request.
+
+## Contact
+
+If you have any questions or want to connect, feel free to reach out:
+
+- GitHub: [arindal1](https://github.com/arindal1)
+- LinkedIn: [Arindal](https://www.linkedin.com/in/arindalchar/)
+- kaggle: [arindal](https://www.kaggle.com/arindal)
+- Dataset Link: <a href="https://www.kaggle.com/competitions/fake-news/data" target="_blank"> Kaggle </a>
+- Google Collab Link: <a href="1YxD2SRlRn9YfG5Lak7Pr9b8Y7bg6maOZ" target="_blank"> Collab </a>
+
+### Happy detecting and learning! 🕵️‍♂️
