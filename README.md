@@ -22,7 +22,7 @@ Fake news has become a concerning issue in today's information-driven world. The
 1. Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/yourusername/Fake-News-Detector.git
+   git clone https://github.com/arindal1/Fake-News-Detector.git
    cd Fake-News-Detector
    ```
 
